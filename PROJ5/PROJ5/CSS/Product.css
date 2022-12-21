@@ -1,0 +1,68 @@
+﻿.table-responsive {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;
+}
+
+.table {
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+.divbtn {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .divbtn .btn {
+        width: 15rem;
+        height: 5rem;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:2px 4px;
+    }
+.fas {
+    font-size: 16px;
+    color: blue;
+}
+
+.btn {
+    height: 2.35rem;
+}
+
+.divbtn .btn {
+    width: 15rem;
+    height: 5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 8px;
+}
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+    .search div:first-child {
+        width: 200px;
+    }
+
+
+.searchbookname {
+    margin-bottom: 7%;
+}
+
+.tbsearch {
+    font-size: 1.5rem;
+    font-weight: bold;
+}

@@ -1,0 +1,77 @@
+﻿.col-sm-8 {
+    background-color: #c3c3c3 !important;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: white;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+#Save, #Upload {
+    width: 7rem;
+    height: 3rem;
+    font-size: 1.25rem;
+}
+
+.meflex {
+    display: flex;
+    flex-direction: row;
+}
+
+#userImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.userinfo {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.98rem;
+}
+
+#selectimage {
+    margin-right: 0.8rem;
+    font-size: 1.25rem;
+}
+
+#form1 {
+    font-size: 1.5rem;
+}
+
+.container {
+    bac width:100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
+
+.containeruserprofile {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.altrow {
+    box-shadow: 4px 3px 2.5px #ccc;
+    border-radius: 8px !important;
+    background-color: #eee;
+    justify-content: space-around;
+    width: fit-content;
+}
+
+#form1 {
+    width: 100%;
+}
