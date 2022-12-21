@@ -95,6 +95,7 @@
     <Content Include="example.js" />
     <Content Include="login.aspx" />
     <Content Include="main.css" />
+    <Content Include="mysearch.aspx" />
     <Content Include="Navbar.css" />
     <Content Include="new.css" />
     <Content Include="Product.aspx" />
@@ -230,6 +231,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mysearch.aspx.cs">
+      <DependentUpon>mysearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mysearch.aspx.designer.cs">
+      <DependentUpon>mysearch.aspx</DependentUpon>
     </Compile>
     <Compile Include="Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>

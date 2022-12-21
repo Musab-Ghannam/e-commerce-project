@@ -50,13 +50,13 @@ namespace WebApplication3
             SqlConnection connection = new SqlConnection("data source= DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI");
             connection.Open();
 
-            string folderpath = Server.MapPath("~/iamges/");
+            string folderpath = Server.MapPath("~/Images/");
             if (!Directory.Exists(folderpath))
             {
                 Directory.CreateDirectory(folderpath);
             }
             FileUpload1.SaveAs(folderpath + FileUpload1.FileName);
-            Image1.ImageUrl = "iamges/" + FileUpload1.FileName;
+            Image1.ImageUrl = "Images/" + FileUpload1.FileName;
             Session["image"] = FileUpload1.FileName;
             connection.Close();
         }

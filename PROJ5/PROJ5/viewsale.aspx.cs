@@ -19,7 +19,7 @@ namespace WebApplication3
             SqlCommand comand = new SqlCommand(query, connection);
             SqlDataReader sdr = comand.ExecuteReader();
             string table = "<div class=\"table-responsive\">";
-            table += "<table class='table table-hover table-bordered'><tr class=\"table-active\"><th scope=\"col\">Order ID</th><th scope=\"col\">Order Date</th><th scope=\"col\">Product Name</th><th scope=\"col\">Product Price</th></tr>";
+            table += "<table class='table table-striped'><tr ><th >Order ID</th><th>Order Date</th><th >Product Name</th><th>Product Price</th></tr>";
 
             while (sdr.Read())
             {

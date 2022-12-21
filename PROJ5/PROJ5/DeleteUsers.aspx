@@ -45,7 +45,12 @@
       
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-         
+         <li class="nav-item">
+            <a class="nav-link" href="Sales.aspx">
+              <i class="fa-solid fa-clipboard-list" style="font-size: 20px;"></i>
+              <span class="menu-title">&nbsp;Sales</span>
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="AdminCategory.aspx">
               <i class="fa-solid fa-clipboard-list" style="font-size: 20px;"></i>
@@ -53,7 +58,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/icons/themify.html">
+            <a class="nav-link" href="Product.aspx">
               <i class="fa-solid fa-book" style="font-size: 20px;"></i>
               <span class="menu-title">&nbsp; Product</span>
             </a>

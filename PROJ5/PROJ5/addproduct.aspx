@@ -12,7 +12,71 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <title>Add Book</title>
-    
+    <style>
+                    width:200px;
+            height:200px;
+            margin-bottom:5%;
+        }
+        .containertable {
+            width:fit-content;
+            padding:2rem;
+            margin-top:1.5%;
+            display: flex;
+            flex-direction:column;
+            align-items:center;
+            background-color:#f3f3f3;
+            border-radius:10px;
+            box-shadow:3px 1px 1px #aaa;
+           
+           
+        }
+        .tb {
+        margin-bottom:0.75rem;
+        border:1px solid;
+
+        }
+        .fileupload
+         {
+        font-family: inherit;
+        font-size: inherit;
+         line-height: inherit;
+         width: 100%;
+        height: 32px;    
+      
+        }
+        .btnadd{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .containerdiv {
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+           
+        
+        }
+
+        .mydropdownlist
+        {
+        background-color:white;
+        font-size: 16px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border:1px solid;
+        font-weight: bold;
+       
+        }
+        @media only screen and (min-device-width:0px) and (max-device-width:480px){
+            .containerdiv{
+                 height:90vh;
+            }
+            table tr {
+                height:140px;
+            }
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">

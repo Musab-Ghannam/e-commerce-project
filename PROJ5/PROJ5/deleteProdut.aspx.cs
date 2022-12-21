@@ -27,7 +27,7 @@ namespace WebApplication3
                 {
                     tbproductname.Text = read[1].ToString();
 
-                    Image1.ImageUrl = $"iamges/{read[2].ToString()}";
+                    Image1.ImageUrl = $"Images/{read[2].ToString()}";
                     tbproductprice.Text = read[4].ToString();
                     tbquantity.Text = read[5].ToString();
                     tbsale.Text = read[7].ToString();

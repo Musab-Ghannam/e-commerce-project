@@ -22,7 +22,7 @@ namespace PROJ5
                 table +=
                     $"<tr><td>{sdr[0]}</td><td>{sdr[1]}</td><td><img  src='Images/{sdr[2]}'/></td>"
                     +
-                    $"<td><a href='editCat.aspx?id={sdr[0]}'>Edit</a> &nbsp <a href='DeleteCat.aspx?id={sdr[0]}'>Delete</a></td></tr>";
+                    $"<td><a href='editCat.aspx?id={sdr[0]}'><i class=\"fas fa-pen\"></i>Edit</a> &nbsp <a href='DeleteCat.aspx?id={sdr[0]}'><i class=\"fas fa-trash\" aria-hidden=\"true\"></i>Delete</a></td></tr>";
             }
             table += "</table>";
             Label1.Text = table;

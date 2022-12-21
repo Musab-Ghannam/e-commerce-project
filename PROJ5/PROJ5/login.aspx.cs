@@ -31,11 +31,11 @@ namespace my_log_in
             {
                 if (Read[1].ToString() == "1") 
                 {
-                    Session["ID"] = Read[0];
+                    Session["ID"] = Read[0].ToString();
                     Response.Redirect("http://localhost:56508/AdminCategory.aspx"); 
                 }
                 else {
-                Session["ID"] = Read[0];
+                Session["ID"] = Read[0].ToString();
 
                 Response.Redirect("http://localhost:56508/EXAMPLE.aspx");
                 }

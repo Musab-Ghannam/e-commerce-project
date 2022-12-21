@@ -31,7 +31,7 @@ namespace WebApplication3
                 {
                     tbproductname.Text = read[1].ToString();
 
-                    Image1.ImageUrl = $"iamges/{read[2].ToString()}";
+                    Image1.ImageUrl = $"Images/{read[2].ToString()}";
                     tbproductprice.Text = read[4].ToString();  
                     tbquantity.Text = read[5].ToString();
                     tbsale.Text = read[7].ToString();   
@@ -68,13 +68,13 @@ namespace WebApplication3
                 SqlConnection connection = new SqlConnection("data source= DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI");
                 connection.Open();
 
-                string folderpath = Server.MapPath("~/iamges/");
+                string folderpath = Server.MapPath("~/Images/");
                 if (!Directory.Exists(folderpath))
                 {
                     Directory.CreateDirectory(folderpath);
                 }
                 FileUpload1.SaveAs(folderpath + FileUpload1.FileName);
-                Image1.ImageUrl = "iamges/" + FileUpload1.FileName;
+                Image1.ImageUrl = "Images/" + FileUpload1.FileName;
                 image1 = FileUpload1.FileName;
                 connection.Close();
             }

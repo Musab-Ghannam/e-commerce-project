@@ -25,7 +25,7 @@ namespace PROJ5
 
                 {
                     Category_Name.Text = read[1].ToString();
-                    TextBox1.Text = read[3].ToString();
+
                     string image = $"Images/{read[2].ToString()}";
                     image1.Src = image;
                     Session["Image"] = read[2].ToString();
@@ -57,24 +57,13 @@ namespace PROJ5
             {
                 filelocation = Session["Image"].ToString();
             }
-            string query = $"update category set DETAIL='{TextBox1.Text}', category_name='{Category_Name.Text}' ,category_PICTURE='{filelocation}' where category_id={id}";
+            string query = $"update category set category_name='{Category_Name.Text}' ,category_PICTURE='{filelocation}' where category_id={id}";
 
 
             SqlCommand command = new SqlCommand(query, connection);
 
             command.ExecuteNonQuery();
             connection.Close();
-            //connection.Open();
-
-
-            //string que = $"update category set DETAIL='{Category_Name.Text}' ,category_PICTURE='{filelocation}' where category_id={id}";
-
-
-            //SqlCommand com = new SqlCommand(que, connection);
-
-            //com.ExecuteNonQuery();
-
-
             Response.Redirect("AdminCategory.aspx");
         }
     }

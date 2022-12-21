@@ -221,11 +221,13 @@ iframe {
     justify-content: center;
     align-items: center;
     padding: 15px;
-    background: #f2f2f2;
+    background-image: url("back.png");
+    background-size: cover;
+    height: 100vh;
 }
 
 .wrap-login100 {
-    width: 590px;
+    width: 450px;
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
@@ -235,6 +237,9 @@ iframe {
     -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
     -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
     -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    background-image: url("back.png");
+    background-size: cover;
+    height: 100vh;
 }
 
 
@@ -243,6 +248,15 @@ iframe {
 
 .login100-form {
     width: 100%;
+    background-image: url("back.png");
+    background-size: cover;
+    height: 100vh;
+}
+.bayy {
+    background-image: url("back.png");
+    background-size: cover;
+    height: 100vh;
+ 
 }
 
 .login100-form-title {

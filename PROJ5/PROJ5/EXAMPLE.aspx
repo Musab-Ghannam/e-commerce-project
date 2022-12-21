@@ -269,7 +269,7 @@ i {
             .seemore a:hover {
                 font-weight: bold;
             }
-
+         
         .all {
             font-size: 30px;
         }
@@ -343,6 +343,53 @@ i {
     text-decoration:none;
     color :black;
 }
+ .noth{
+           margin:0px 12px 0px 12px;
+           font-weight:bold;
+           font-size:22px;
+           color:black;
+       }
+       .noth2{
+          margin-left:5px;
+           font-weight:bold;
+           font-size:25px;
+           color:crimson;
+       }
+       .hide2{
+           display:none;
+           font-size:1px;
+       }
+        .noth3{
+          margin-right:35px;
+           font-weight:bold;
+           font-size:22px;
+           color:crimson;
+           text-align:center;
+       }
+        #logo{
+            padding-left:3%;
+            margin:12px;
+        }
+        .araba{
+            margin :12px !important;
+        }
+        #sign{
+            margin :12px !important;
+        }
+        
+         #log{
+            margin :12px !important;
+        }
+         .midd{
+             margin-top:12px;
+             margin-bottom:12px;
+         }
+        .more {
+            margin-top: 17px;
+        }
+       
+
+      
     </style>
 </head>
 
@@ -363,8 +410,37 @@ i {
             <button><i class="fa-solid fa-cart-shopping"></i></button>
         </div>
      </nav>--%>
+         <div class="NAVBAR">
+        <div class="data">
+<img src="Logo.png" id="logo"/>
+             <p class="noth ">plot bound </p>
+
+          <div class="input-group">
+  <input type="search" id="searches" runat="server" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+  <button type="button" runat="server" onserverclick="Submit_Click" class="btn btn-outline-dark">search</button>
+</div>
+
+                     </div>
+
+          <div class="burger">
+<i class="fa-solid fa-bars"></i>
+
+            </div>
+       
+       <div class="info">
+ <asp:Label CssClass="h6 midd  noth2 "  ID="Label7" runat="server" Text="Welcome "></asp:Label> <asp:Label CssClass="h6 midd noth"  ID="Label8" runat="server" Text="Label"></asp:Label> <asp:Label CssClass="h6 midd noth3"  ID="Label9" runat="server" Text="Label"></asp:Label>
+           <asp:HyperLink ID="prof" CssClass="midd more" NavigateUrl="http://localhost:56508/User%20Profile.aspx"  runat="server">profile</asp:HyperLink>
+           <asp:Button ID="Button2" style="height:2rem;  margin-top:0.8rem;margin-left:0.5rem;padding:0;" runat="server" Text="Log Out" CssClass="btn btn-outline-secondary" OnClick="Button2_Click1" />
+                         <asp:HyperLink NavigateUrl="http://localhost:56508/signup.aspx"  ID="sign" runat="server">regestration</asp:HyperLink>
+                                   <asp:HyperLink NavigateUrl="http://localhost:56508/login.aspx"   ID="log" runat="server">Log In</asp:HyperLink>
+
+          
+  <a href="http://localhost:56508/cart.aspx">  <i class="fa-sharp fa-solid fa-cart-shopping araba"></i></a>
+ </div>
+     
+</div>
         
-                   <nav>
+                  <%-- <nav>
 
     <div class="NAVBAR">
         <div class="data">
@@ -403,7 +479,7 @@ i {
           
 
             
-        </nav>
+        </nav>--%>
       
         <div>
 

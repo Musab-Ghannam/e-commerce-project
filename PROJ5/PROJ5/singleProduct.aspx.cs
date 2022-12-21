@@ -72,7 +72,7 @@ namespace project5
              
                 while (read.Read())
                 {
-                    string im = $"<img class='card-img-top mb-5 mb-md-0' src='iamges/{read[1]}'  style='width: 300px; alt='...' />";
+                    string im = $"<img class='card-img-top mb-5 mb-md-0' src='Images/{read[1]}'  style='width: 300px; alt='...' />";
                    imgContainer.InnerHtml= im ;
                     itemName.InnerText = $"{read[0]}" ;
                     itemPrice.InnerText = $"{read[2]} JD";
@@ -140,7 +140,7 @@ namespace project5
 
 
                 tableCell5.Controls.Add(btn);
-                tableCell1.InnerHtml = $" <img src = 'iamges/{reader[1]}' style='width:100px;'>";
+                tableCell1.InnerHtml = $" <img src = 'Images/{reader[1]}' style='width:100px;'>";
                 tableCell2.InnerHtml = $"{reader[0]}";
                 tableCell3.InnerHtml = $"x{reader[3]}";
                 tableCell4.InnerHtml = $"{Convert.ToDouble(reader[2]) * Convert.ToDouble(reader[3])} JD";

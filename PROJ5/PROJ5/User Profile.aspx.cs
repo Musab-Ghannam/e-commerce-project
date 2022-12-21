@@ -18,7 +18,7 @@ namespace WebApplication3
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            int id = 1;
+            int id =Convert.ToInt32( Session["ID"].ToString());
             if (!IsPostBack)
             {
                 SqlConnection connection = new SqlConnection("data source= DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI");
@@ -42,7 +42,7 @@ namespace WebApplication3
                     lastName.Value = read[4].ToString();
                     phone.Value = read[5].ToString();
                     City.Items.FindByValue(read[6].ToString()).Selected = true;
-                    userImage.Src = $"iamges/{read[8].ToString()}";
+                    userImage.Src = $"Images/{read[8].ToString()}";
                     Session["Imagealt"]= read[8].ToString();
                     image1= Session["Imagealt"].ToString(); 
                 }
@@ -53,7 +53,7 @@ namespace WebApplication3
 
         protected void Save_Click(object sender, EventArgs e)
         {
-            int id = 1;
+            int id = Convert.ToInt32(Session["ID"].ToString()); 
             SqlConnection connection = new SqlConnection("data source= DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI");
             connection.Open(); 
             string query = $"update users set  EMAIL='{email.Value}',pass='{Password.Value}',First_name='{firstName.Value}',Last_Name='{lastName.Value}' ,PHONE='{phone.Value}',city_Id='{City.SelectedValue}',user_PICTURE='{Session["Imagealt"]}' where USerid={id}";
@@ -64,20 +64,20 @@ namespace WebApplication3
         }
         protected void Upload_Click(object sender, EventArgs e)
         {
-            int id = 1;
+            int id = Convert.ToInt32(Session["ID"].ToString());
             if (FileUpload1.HasFile)
             {
 
                 SqlConnection connection = new SqlConnection("data source= DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI");
                 connection.Open();
 
-                string folderpath = Server.MapPath("~/iamges/");
+                string folderpath = Server.MapPath("~/Images/");
                 if (!Directory.Exists(folderpath))
                 {
                     Directory.CreateDirectory(folderpath);
                 }
                 FileUpload1.SaveAs(folderpath + FileUpload1.FileName);
-                userImage.Src = "iamges/" + FileUpload1.FileName;
+                userImage.Src = "Images/" + FileUpload1.FileName;
                 Session["image"] = FileUpload1.FileName;
                 image1 = Session["image"].ToString();
                 connection.Close();

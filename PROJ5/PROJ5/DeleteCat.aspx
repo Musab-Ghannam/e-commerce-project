@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,6 +45,12 @@
       
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+            <li class="nav-item">
+            <a class="nav-link" href="Sales.aspx">
+              <i class="fa-solid fa-clipboard-list" style="font-size: 20px;"></i>
+              <span class="menu-title">&nbsp;Sales</span>
+            </a>
+          </li>
          
           <li class="nav-item">
             <a class="nav-link" href="AdminCategory.aspx">

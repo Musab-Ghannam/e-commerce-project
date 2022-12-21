@@ -88,7 +88,7 @@ namespace project5
                     div4.Attributes.Add("class", "d-flex flex-row align-items-center");
 
                     HtmlGenericControl div5 = new HtmlGenericControl();
-                    div5.InnerHtml = $"<img src='iamges/{reader[1]}'  class='img-fluid rounded-3' alt='Shopping item' style='width: 65px;'>";
+                    div5.InnerHtml = $"<img src='Images/{reader[1]}'  class='img-fluid rounded-3' alt='Shopping item' style='width: 65px;'>";
              
                 HtmlGenericControl div6 = new HtmlGenericControl();
                     div6.Attributes.Add("class", "ms-3");
@@ -152,7 +152,7 @@ namespace project5
 
 
                 tableCell5.Controls.Add(btn1);
-                tableCell1.InnerHtml = $" <img src = 'iamges/{reader[1]}' style='width:100px;'>";
+                tableCell1.InnerHtml = $" <img src = 'Images/{reader[1]}' style='width:100px;'>";
                 tableCell2.InnerHtml = $"{reader[0]}";
                 tableCell3.InnerHtml = $"x{reader[3]}";
                 tableCell4.InnerHtml = $"{Convert.ToDouble(reader[2]) * Convert.ToDouble(reader[3])} JD";

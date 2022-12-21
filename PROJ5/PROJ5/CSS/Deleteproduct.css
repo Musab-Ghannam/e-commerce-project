@@ -1,4 +1,4 @@
-﻿#Image1 {
+﻿#image1 {
     width: 200px;
     height: 200px;
     margin-bottom: 5%;
@@ -7,15 +7,13 @@
 .containertable {
     width: fit-content;
     padding: 2rem;
-    margin-top: 2%;
+    margin-top: 1.5%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: #f3f3f3;
     border-radius: 10px;
     box-shadow: 3px 1px 1px #aaa;
-    height: 90vh;
 }
 
 .tb {
@@ -49,13 +47,17 @@
     font-size: 16px;
     padding: 5px 10px;
     border-radius: 5px;
-    border: 1px solid;
+    border: 1px solid black !important;
     font-weight: bold;
+    background-color: white !important;
 }
 
-@media only screen and (min-device-width: 0px) and (max-device-width: 480px) {
+@media only screen and (min-device-width:0px) and (max-device-width:480px) {
+    .containerdiv {
+        height: 90vh;
+    }
 
     table tr {
-        height: 144px;
+        height: 140px;
     }
 }
