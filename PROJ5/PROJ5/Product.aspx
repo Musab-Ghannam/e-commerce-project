@@ -94,7 +94,7 @@
                     <asp:TextBox ID="TextBox1" runat="server" cssClass="form-control tbsearch"></asp:TextBox>
                 </div>
                 <div>
-                    <asp:Button ID="Button1" runat="server" Text="search" class="btn btn-primary btnsearch" OnClick="Button1_Click "/>
+                   <button  ID="Button1" runat="server" Text="search" class="btn btn-primary btnsearch" onserverclick="Button1_Click"> <i class="fa fa-search" aria-hidden="true"></i></button>
                 </div>
             </div>
 <div class="searchbookname">

@@ -21,7 +21,7 @@
    
     <div class="row altrow">
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img runat="server" id="userImage" class="rounded-circle mt-5" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img runat="server" id="userImage" class="rounded-circle mt-5" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"><asp:Label ID="Username" runat="server" Text="Label"></asp:Label></span><span class="text-black-50"><asp:Label ID="UserEmail" runat="server" Text="Label"></asp:Label></span></div>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">

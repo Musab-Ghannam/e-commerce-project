@@ -237,7 +237,7 @@ iframe {
     -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
     -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
     -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    background-image: url("back.png");
+/*    background-image: url("back.png");*/
     background-size: cover;
     height: 100vh;
 }
@@ -248,12 +248,12 @@ iframe {
 
 .login100-form {
     width: 100%;
-    background-image: url("back.png");
+   /* background-image: url("back.png");*/
     background-size: cover;
     height: 100vh;
 }
 .bayy {
-    background-image: url("back.png");
+  /*  background-image: url("back.png");*/
     background-size: cover;
     height: 100vh;
  

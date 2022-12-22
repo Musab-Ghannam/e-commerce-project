@@ -44,7 +44,10 @@ namespace WebApplication3
                     City.Items.FindByValue(read[6].ToString()).Selected = true;
                     userImage.Src = $"Images/{read[8].ToString()}";
                     Session["Imagealt"]= read[8].ToString();
-                    image1= Session["Imagealt"].ToString(); 
+                    image1= Session["Imagealt"].ToString();
+                    string username = read[3].ToString() + " " + read[4].ToString();
+                    Username.Text = username;
+                    UserEmail.Text = read[1].ToString();
                 }
             }
 
