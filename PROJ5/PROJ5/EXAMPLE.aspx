@@ -524,10 +524,10 @@ i {
                <asp:Button ID="Button3" runat="server" Text="see more" Width="88px" />
          </div>--%>
             <br />
-            <asp:Label ID="Label3" Class="title" runat="server" Text="products on sale"></asp:Label>
+            <asp:Label ID="Label3" Class="title" runat="server" Text="discounted products"></asp:Label>
             <asp:Label Class="carding" ID="Label4" runat="server" Text=""></asp:Label>
 
-            <asp:Label ID="Label5" Class="title" runat="server" Text="MOST SELLING"></asp:Label>
+            <asp:Label ID="Label5" Class="title" runat="server" Text="Mose selling"></asp:Label>
             <asp:Label Class="carding" ID="Label6" runat="server" Text=""></asp:Label>
 
         </div>
