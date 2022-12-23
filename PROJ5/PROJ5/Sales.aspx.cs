@@ -14,6 +14,36 @@ namespace WebApplication3
         {
             SqlConnection connection = new SqlConnection("data source= DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI");
             connection.Open();
+            bool flag = false;
+            if (!string.IsNullOrEmpty(Session["ID"] as string))
+            {
+                int IDs = Convert.ToInt32(Session["ID"].ToString());
+
+
+                SqlCommand check = new SqlCommand($"Select role_id from users where userid={IDs}", connection);
+                connection.Open();
+                SqlDataReader rolecheck = check.ExecuteReader();
+
+                while (rolecheck.Read())
+                {
+                    if (Convert.ToInt32(rolecheck[0]) == 1)
+                    {
+
+                        flag = true;
+                        break;
+
+                    }
+                }
+            }
+            connection.Close();
+            connection.Open();
+            if (flag)
+            {
+
+
+
+
+    
             string query = "select*from users";
             SqlCommand comand = new SqlCommand(query, connection);
             SqlDataReader sdr = comand.ExecuteReader();
@@ -75,8 +105,9 @@ namespace WebApplication3
                 count += Convert.ToInt32(rdrerr[0]);
             }
             fivedcondconn.Close();
-            Label4.Text = count.ToString() + "JOD"; 
-
+            Label4.Text = count.ToString() + "JD";
+            }
+            connection.Close();
 
 
         }

@@ -40,6 +40,12 @@
        #Label4, #Label2, #Label3, #Label1{
            font-size:1.5rem;
        }
+       .card-stats .card-body{
+          height:125px !important;
+      }
+      .card-stats {
+          height:125px !important;
+      }
    </style>
    
 </head>

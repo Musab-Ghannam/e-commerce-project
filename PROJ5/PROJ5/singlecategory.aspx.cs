@@ -33,7 +33,7 @@ namespace PROJ5
                     $" <div class=\"card-body\">\r\n      <h4 class=\"card-title\">{reader[1]}</h4>\r\n     " +
                        $" <p class=\"card-text PRICE1\" >Price:{reader[4]}.00JD</p>\r\n    " +
                     $" <p class=\"card-text\">{reader[6]}</p>\r\n    " +
-                    $"  <a href=\"http://localhost:56508/cart.aspx\" class=\"btn btn-primary\">add to my cart</a>\r\n    </div>\r\n  </div>\r \n <br> </div>";
+                    $"  <a href=\"http://localhost:56508/singleProduct.aspx?product_id={reader[0]}\" class=\"btn btn-primary\">add to my cart</a>\r\n    </div>\r\n  </div>\r \n <br> </div>";
 
                 
 

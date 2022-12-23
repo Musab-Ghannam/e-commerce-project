@@ -43,8 +43,8 @@ namespace PROJ5
                 auth.DataTextField = "author";
                 auth.DataBind();
                 CONN.Close();
-                string search = Request.QueryString["ss"];
-                SqlCommand comm = new SqlCommand($"select * from product where sale=0 and product_name like '%{search}%';", CONN);
+                string search = Request.QueryString["ss"].ToString();
+                SqlCommand comm = new SqlCommand($"select * from product where product_name like '%{search}%';", CONN);
                 CONN.Open();
                 SqlDataReader read = comm.ExecuteReader();
                 while (read.Read())

@@ -87,7 +87,7 @@
     <form id="form1" runat="server">
         
            <div class="divbtn">
-               <a class="btn btn-primary" href="addproduct.aspx" role="button">Add New Book</a><br />
+               <a class="btn btn-primary" href="addproduct.aspx" role="button" id="add-book"  >Add New Book</a><br />
             </div>
             <div class="search">
                 <div>

@@ -527,7 +527,7 @@ i {
             <asp:Label ID="Label3" Class="title" runat="server" Text="discounted products"></asp:Label>
             <asp:Label Class="carding" ID="Label4" runat="server" Text=""></asp:Label>
 
-            <asp:Label ID="Label5" Class="title" runat="server" Text="Mose selling"></asp:Label>
+            <asp:Label ID="Label5" Class="title" runat="server" Text="Most selling"></asp:Label>
             <asp:Label Class="carding" ID="Label6" runat="server" Text=""></asp:Label>
 
         </div>
@@ -555,9 +555,10 @@ i {
                 </div>
             </div>
              <div class="aboutinfooter">
-                <h3>ABOUT</h3>
-                <a href="#">ABOUT US</a>
-                <a href="#">BOOKS</a>
+                
+                   <a href="http://localhost:56508/User%20Profile.aspx">MY Profile</a>
+                <a href="http://localhost:56508/About.aspx">ABOUT US</a>
+                <a href="http://localhost:56508/allcategories.aspx">ALL CATEGORIES</a>
                  
             </div>
                 <div claa="contact" style="display:flex;flex-direction:column">

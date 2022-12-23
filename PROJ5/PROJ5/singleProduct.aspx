@@ -68,7 +68,7 @@
                             Cart
                             <span class="badge bg-dark text-white ms-1 rounded-pill" id="cartCount" runat="server">0</span></asp:LinkButton>
 
-                             <table id="cartTable" runat="server"></table>
+                             <table id="cartTable" class="table table-stripped table-hover align-middle" runat="server"></table>
                     </div>
                 </div>
             </div>
