@@ -30,7 +30,7 @@ namespace PROJ5
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl searches;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText searches;
 
         /// <summary>
         /// Label7 control.

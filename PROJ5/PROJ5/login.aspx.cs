@@ -37,7 +37,7 @@ namespace my_log_in
                 else {
                 Session["ID"] = Read[0].ToString();
 
-                Response.Redirect("http://localhost:56508/EXAMPLE.aspx");
+                Response.Redirect("http://localhost:49765/homepage.aspx");
                 }
 
             }

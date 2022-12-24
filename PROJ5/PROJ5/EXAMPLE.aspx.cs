@@ -63,7 +63,7 @@ namespace PROJ5
 
 
 
-
+            CONN.Close();
 
             SqlCommand command = new SqlCommand("SELECT TOP 4 * FROM category", CONN);
 
