@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     
+     
     <title>View Sales</title>
     <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
@@ -17,7 +18,7 @@
 
 </head>
 <body>
-     <div class="container-scroller">
+        <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
@@ -65,6 +66,14 @@
               <span class="menu-title">&nbsp; Users</span>
             </a>
           </li>
+    
+      <li class="nav-item">
+                <a class="nav-link" ID="LinkButton1" onserverclick="Logout" runat="server">
+              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
+              <span class="menu-title">&nbsp; Logout</span>
+             </a>
+          </li>
+
         </ul>
       </nav>
       <div class="main-panel">

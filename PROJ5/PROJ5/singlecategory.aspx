@@ -16,14 +16,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald&family=Russo+One&display=swap" rel="stylesheet"/>
            <style>
         #Label1 {
-     display: grid;
+/*     display: grid;
 
 grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
 grid-row-gap:50px;
 justify-content: center;
     text-align: center;
     align-items:center;
-    margin-left:35px;
+    margin-left:35px;*/
+
+
+  display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+            align-items: center;
+              gap:70px;
+
+
         }
               #Label2 {
  text-align:center;
@@ -55,6 +65,8 @@ justify-content: center;
                    display:flex;
                    justify-content:center;
                    align-items:center;
+                   margin-left:30px;
+                   margin-top:30px;
 
                }
 
@@ -133,7 +145,7 @@ justify-content: center;
 
         <br />
 
-    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+    <asp:Label ID="Label1" runat="server" Text="" CssClass="container"></asp:Label>
    
     </form>
     <script src="mosab.js"></script>

@@ -59,12 +59,19 @@ namespace PROJ5
             }
             else
             {
-                Label1.Text = "You don't have access";
+                Response.Redirect("login.aspx");
             }
 
             connection.Close();
 
+        }
 
+
+
+        protected void Logout(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("login.aspx");
         }
     }
 }

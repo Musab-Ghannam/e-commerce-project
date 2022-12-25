@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
-     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
   
     <title>Books in library</title>
    <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
@@ -18,13 +18,74 @@
   <link rel="shortcut icon" href="../../images/favicon.png" />
   <script src="https://kit.fontawesome.com/e869edadc1.js" crossorigin="anonymous"></script>
     <style>
-        .btn{
-            height:3rem;
-        }
+ #image1 {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 5%;
+    margin:1rem 0;
+}
+
+.containertable {
+    width: fit-content;
+    padding: 2rem;
+    margin-top: 1.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 3px 1px 1px #aaa;
+}
+
+.tb {
+    margin-bottom: 0.75rem;
+    border: 1px solid;
+}
+
+.fileupload {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    width: 100%;
+    height: 32px;
+}
+
+.btnadd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerdiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mydropdownlist {
+    background-color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid black !important;
+    font-weight: bold;
+    background-color:white !important;
+}
+
+@media only screen and (min-device-width:0px) and (max-device-width:480px) {
+    .containerdiv {
+        height: 90vh;
+    }
+
+    table tr {
+        height: 140px;
+    }
+}
     </style>
 </head>
 <body>
-    <div class="container-scroller">
+   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
@@ -72,6 +133,13 @@
               <span class="menu-title">&nbsp; Users</span>
             </a>
           </li>
+
+            <li class="nav-item">
+                <a class="nav-link" ID="LinkButton1" onserverclick="Logout" runat="server">
+              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
+              <span class="menu-title">&nbsp; Logout</span>
+             </a>
+          </li>
         </ul>
       </nav>
       <div class="main-panel">
@@ -82,12 +150,12 @@
                 <div class="card-body">
                     <br />
     <div class="w3-container w3-center w3-animate-top">
-  <h2>BOOKS IN LIBRARY</h2>
+  <h2>Products in Library</h2>
 </div>
     <form id="form1" runat="server">
         
            <div class="divbtn">
-               <a class="btn btn-primary" href="addproduct.aspx" role="button" id="add-book"  >Add New Book</a><br />
+               <a class="btn btn-primary" href="addproduct.aspx" role="button">Add New Book</a><br />
             </div>
             <div class="search">
                 <div>

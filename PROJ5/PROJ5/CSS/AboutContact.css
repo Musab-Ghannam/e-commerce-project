@@ -1,0 +1,20 @@
+﻿body {
+    background-color: aliceblue;
+}
+
+#Lg {
+    height: 30px;
+}
+
+.PP {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+#row
+{
+    display:flex;
+    justify-content:space-around;
+}

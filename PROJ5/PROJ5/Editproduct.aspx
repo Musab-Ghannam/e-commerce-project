@@ -6,22 +6,48 @@
 <head runat="server">
 
 
-
-
-        <title>Edit Book</title>
-     <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
+    
+  <title>Edit Book</title>
+  <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- inject:css -->
+  
   <link rel="stylesheet" href="../../css/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../../images/favicon.png" />
     
   <style>
+       .xsign{
+          color:blue;
+          text-decoration:none
+      }
+      .alert {
+  padding: 20px;
+  background-color: #04AA6D; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
  #image1 {
     width: 200px;
     height: 200px;
     margin-bottom: 5%;
+    margin:1rem 0;
 }
 
 .containertable {
@@ -134,6 +160,14 @@
               <span class="menu-title">&nbsp; Users</span>
             </a>
           </li>
+
+  <li class="nav-item">
+                <a class="nav-link" ID="LinkButton1" onserverclick="Logout" runat="server">
+              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
+              <span class="menu-title">&nbsp; Logout</span>
+             </a>
+          </li>
+
         </ul>
       </nav>
       <div class="main-panel">
@@ -150,10 +184,14 @@
         <div class="w3-container w3-center w3-animate-right">
   <h2>EDIT BOOK</h2>
     </div>
+                          
+                                                         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>          
+
                 <div>
             <div class="containerdiv">
 <div class="containertable form-group">
     <table>
+
         <tr>
             <td>
                             <asp:Label ID="lbproductname" runat="server" Text="Product Name"></asp:Label>
@@ -176,7 +214,7 @@
         </tr>
         <tr>
             <td>
-                            <asp:Label ID="Label1" runat="server" Text="Author"></asp:Label>
+                            <asp:Label ID="Author" runat="server" Text="Author"></asp:Label>
 
             </td>
             <td>
@@ -226,7 +264,8 @@
         </tr>
         <tr>
             <td>
-                            <asp:FileUpload ID="FileUpload1" runat="server" />
+                            <asp:FileUpload ID="FileUpload1" runat="server" accept=".png,.jpg,.jpeg,.gif" />
+
 
             </td>
             <td>
@@ -234,6 +273,9 @@
 
             </td>
         </tr>
+        <td>
+
+        </td>
             <td>
                             <asp:Image ID="Image1" runat="server" width="200px" Height="200px"/>
 
@@ -242,14 +284,17 @@
 
     </table>
     <div class="btnadd">
-                    <asp:Button ID="addedit" cssclass="btn btn-primary"  runat="server" Text="Add Edit" OnClick="addedit_Click" />
+
+                    <asp:Button ID="addedit" cssclass="btn btn-primary"  runat="server" Text="Update" OnClick="addedit_Click" />
+
+    </div>
 
     </div>
     </div>
-    </div>
+
     </div>
             
-            
+
           </form>
         </div>
                      </div>
@@ -261,6 +306,7 @@
                   </div>
 
         <script src="../../vendors/base/vendor.bundle.base.js"></script>
+        
   <!-- endinject -->
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->
@@ -269,6 +315,7 @@
   <script src="../../js/hoverable-collapse.js"></script>
   <script src="../../js/template.js"></script>
   <script src="../../js/todolist.js"></script>
+
 
 </body>
 </html>

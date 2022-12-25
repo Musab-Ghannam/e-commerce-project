@@ -27,13 +27,13 @@ namespace PROJ5
             while (reader.Read())
             {
                
-                Label1.Text += $"<div class=\"row\" style=\"\">\r \n \r \n " +
+                Label1.Text += $"<div class=\"row \" style=\"\">\r \n \r \n " +
                     $"<div class=\"card\" style =\"width:250px\">\r\n    " +
                     $"  <img class=\"card-img-top book\"  src='Images/{reader[2]}' style='width:170px; height:250px'>               " +
                     $" <div class=\"card-body\">\r\n      <h4 class=\"card-title\">{reader[1]}</h4>\r\n     " +
                        $" <p class=\"card-text PRICE1\" >Price:{reader[4]}.00JD</p>\r\n    " +
                     $" <p class=\"card-text\">{reader[6]}</p>\r\n    " +
-                    $"  <a href=\"http://localhost:56508/singleProduct.aspx?product_id={reader[0]}\" class=\"btn btn-primary\">add to my cart</a>\r\n    </div>\r\n  </div>\r \n <br> </div>";
+                    $"  <a href=\"http://localhost:56508/singleProduct.aspx?product_id={reader[0]}\" class=\"btn btn-primary\">see more details</a>\r\n    </div>\r\n  </div>\r \n <br> </div>";
 
                 
 

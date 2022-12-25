@@ -69,6 +69,16 @@
               <span class="menu-title">&nbsp; Users</span>
             </a>
           </li>
+
+
+                    <li class="nav-item">
+                <a class="nav-link" ID="LinkButton1" onserverclick="Logout" runat="server">
+              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
+              <span class="menu-title">&nbsp; Logout</span>
+             </a>
+          </li>
+
+
         </ul>
       </nav>
       <div class="main-panel">
@@ -85,12 +95,12 @@
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Category Name</span>
-                                <asp:TextBox ID="Category_Name" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="Category_Name" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required="true" runat="server"></asp:TextBox>
  
                             </div>
        <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupFile01" style="width:143px;">Upload Image</label>
-           <asp:FileUpload ID="FileUpload1" class="form-control" runat="server" />
+           <asp:FileUpload required="true" accept=".png,.jpg,.jpeg,.gif" ID="FileUpload1" class="form-control" runat="server"  />
 
 </div>
          

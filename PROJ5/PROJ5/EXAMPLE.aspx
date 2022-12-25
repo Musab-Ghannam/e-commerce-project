@@ -122,6 +122,7 @@ i {
             justify-content: space-around;
             text-align: center;
             align-items: center;
+          
        
         }
 
@@ -448,17 +449,20 @@ i {
   <%--<input type="search" id="searches" runat="server" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />--%>
   
 
-       <asp:Label CssClass="h6 midd  noth2 "  ID="Label7" runat="server" Text="Welcome "></asp:Label> <asp:Label CssClass="h6 midd noth"  ID="Label8" runat="server" Text="Label"></asp:Label> <asp:Label CssClass="h6 midd noth3"  ID="Label9" runat="server" Text="Label"></asp:Label>
+       <%--<asp:Label CssClass="h6 midd  noth2 "  ID="Label7" runat="server" Text="Welcome "></asp:Label> <asp:Label CssClass="h6 midd noth"  ID="Label8" runat="server" Text="Label"></asp:Label> <asp:Label CssClass="h6 midd noth3"  ID="Label9" runat="server" Text="Label"></asp:Label>
            <asp:HyperLink ID="prof" CssClass="midd more" NavigateUrl="http://localhost:56508/User%20Profile.aspx"  runat="server">profile</asp:HyperLink>
            <asp:Button ID="Button2" style="height:2rem;  margin-top:0.8rem;margin-left:0.5rem;padding:0;" runat="server" Text="Log Out" CssClass="btn btn-outline-secondary" OnClick="Button2_Click1" />
                          <asp:HyperLink NavigateUrl="http://localhost:56508/signup.aspx"  ID="sign" runat="server"></asp:HyperLink>
-                                   <asp:HyperLink NavigateUrl="http://localhost:56508/login.aspx"   ID="log" runat="server"></asp:HyperLink>
+                                   <asp:HyperLink NavigateUrl="http://localhost:56508/login.aspx"   ID="log" runat="server"></asp:HyperLink>--%>
    <%-- <a href="#" class="w3-bar-item w3-button w3-red w3-hide-small w3-padding-16 w3-hide-medium">Go</a>--%>
          <button type="button" runat="server" onserverclick="Submit_Click" class=" w3-bar-item w3-button w3-red w3-hide-small w3-padding-16 w3-hide-medium">search</button>
     <a href="http://localhost:56508/About.aspx" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-padding-16 w3-hide-medium">About</a>
     <a href="http://localhost:56508/contact.aspx" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-padding-16 w3-hide-medium">Contact</a>
     <a href="http://localhost:56508/allcategories.aspx" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-padding-16 w3-hide-medium">Categories</a>
-    <a href="http://localhost:56508/login.aspx" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-padding-16 w3-hide-medium w3-right"><i class="w3-xlarge fa fa-user" id="login"></i> Log In</a>
+    <a href="http://localhost:56508/login.aspx" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-padding-16 w3-hide-medium w3-right" runat="server" ID="LOGIN" ><i class="w3-xlarge fa fa-user" id="login"></i> Log In</a>
+         <a href="http://localhost:56508/User%20Profile.aspx" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-padding-16 w3-hide-medium w3-right" runat="server" ID="pro" visible="false" ><i class="w3-xlarge fa fa-user" id="login" ></i> profile</a>
+
+      <asp:LinkButton class="nav-link w3-bar-item w3-button w3-hover-red w3-hide-small w3-padding-16 w3-hide-medium w3-right" ID="LinkButton1" OnClick="Logout" runat="server" Visible="false"> Log out </asp:LinkButton>
     <a href="#" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-padding-16 w3-hide-medium w3-right"><i class="w3-xlarge fa fas fa-shopping-cart" id="login"></i> Cart</a>
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-padding-16" onclick="myFunction()">&#9776;</a>
   </div>

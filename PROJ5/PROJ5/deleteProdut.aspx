@@ -4,7 +4,6 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    
     <title>Delete Book</title>
      <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
@@ -15,10 +14,41 @@
   <link rel="shortcut icon" href="../../images/favicon.png" />
     
   <style>
- #image1 {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 5%;
+       .xsign{
+          color:black;
+          text-decoration:none
+      }
+          .alert {
+  padding: 20px;
+  background-color: #04AA6D; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
+ #Image1 {
+    width:100%;
+    height: 280px;
+   
+    border: 2px solid #aaa;
+    background-color: #cccc;
+    border-radius: 9px;
+   
 }
 
 .containertable {
@@ -78,11 +108,81 @@
         height: 140px;
     }
 }
+.read{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: flex-start;
 
+}
+.description{
+    padding:5%;
+    width: 213px;
+}
+.title span{
+    display:block;
+    
+}
+ .momencont{
+   
+    display: flex;
+    flex-direction:column;
+    width:fit-content;
+    padding-bottom: 1%;
+
+}
+ 
+.deletebn{
+    display:flex;
+    justify-content:center;
+}
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+.alert2 {
+  padding: 20px;
+  background-color: blue;
+  color: white;
+}
+
+.closebtn2 {
+  margin-left: 15px;
+  color: #2196F3;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn2:hover {
+  color: black;
+}
   </style>
 </head>
 <body>
-       <div class="container-scroller">
+      <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
@@ -129,7 +229,13 @@
               <i class="fa-solid fa-user" style="font-size: 20px;"></i>
               <span class="menu-title">&nbsp; Users</span>
             </a>
+    <li class="nav-item">
+                <a class="nav-link" ID="LinkButton1" onserverclick="Logout" runat="server">
+              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
+              <span class="menu-title">&nbsp; Logout</span>
+             </a>
           </li>
+
         </ul>
       </nav>
       <div class="main-panel">
@@ -144,118 +250,35 @@
     <form id="form1" runat="server" class="form1">
         <div class="w3-container w3-center w3-animate-right">
     <h2>DELETE BOOK</h2>
+
     </div>
-                        <div>
-            <div class="containerdiv">
-<div class="containertable form-group">
-    <table>
-        <tr>
-            <td>
-                  <asp:Label ID="lbproductname" runat="server" Text="Product Name"></asp:Label>
-            </td>
-            <td>
-                  <asp:TextBox ID="tbproductname"  CssClass="tb form-control input-lg" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <asp:Label ID="lbcategoryname" runat="server" Text="Category Name"></asp:Label>
+                 <asp:Label ID="lbtest" runat="server" Text=""></asp:Label>
 
-            </td>
-            <td>
-              <asp:DropDownList ID="drcategoryname" CssClass="tb mydropdownlist btn btn-default btn-sm" runat="server"></asp:DropDownList>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                    <asp:Label ID="Label1" runat="server" Text="Author"></asp:Label>
-            </td>
-            <td>
-                    <asp:TextBox ID="tbauthor"  CssClass="tb form-control input-lg" runat="server"></asp:TextBox>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-                            <asp:Label ID="lbproductprice" runat="server" Text="Product Price"></asp:Label>
-            </td>
-            <td>
-                            <asp:TextBox ID="tbproductprice"  CssClass="tb form-control input-lg" runat="server"></asp:TextBox>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-                        <asp:Label ID="lbquantity" runat="server" Text="Quantity"></asp:Label>
-            </td>
-            <td>
-                        <asp:TextBox ID="tbquantity"  CssClass="tb form-control input-lg" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                 <asp:Label ID="Lbdetails" runat="server" Text="Details"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="tbdetails"  CssClass="tb form-control input-lg" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                   <asp:Label ID="lbsale" runat="server" Text="Sale"></asp:Label>
-            </td>
-            <td>
-                  <asp:TextBox ID="tbsale"  CssClass="tb form-control input-lg" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                 <asp:FileUpload ID="FileUpload1" runat="server" />
-            </td>
-            <td>
-                 <asp:Button ID="btnupload" runat="server" cssclass="btn btn-primary" Text="Upload" OnClick="btnupload_Click" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                 <asp:Image ID="Image1" runat="server" />
-            </td>
-        </tr>
-        
-    </table>
-    <div class="btnadd">
-        <asp:Button ID="btnDelete" runat="server"  cssclass="btn btn-primary" OnClick="btnDelete_Click" Text="Delete" />
-    </div>
-     
-  </div>
-                </div>
-                            </div>
-        
-    </form>
- </div>
-                     </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="book read">
+        <div class="momencont">
+            <div class="cover">
+            <asp:Image ID="Image1" runat="server" />
         </div>
-                  </div>
+        <div class="description">
+          <p> <asp:Label ID="lbproductname" runat="server" Text="Book Name: "></asp:Label><br>
+            <span class="author"><asp:Label ID="Author" runat="server" Text="Author: "></asp:Label></span><br>
+              <Span class="author">  <asp:Label ID="lbcategoryname" runat="server" Text="Gategory: "></asp:Label></span><br />
+              <spanclass="author"> <asp:Label ID="lbproductprice" runat="server" Text="Price: "></asp:Label></span>
+            </p>
+        </div>
+            <div class="deletebn">
+                <button type="button" class="btn btn-danger" runat="server" onserverclick="btnDelete_Click">Delete</button>
+            </div>
+        </div>
+      </div>
+        </form>
 
         <script src="../../vendors/base/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page-->
-  <!-- End plugin js for this page-->
-  <!-- inject:js -->
+
   <script src="../../js/off-canvas.js"></script>
   <script src="../../js/hoverable-collapse.js"></script>
   <script src="../../js/template.js"></script>
   <script src="../../js/todolist.js"></script>
-
 </body>
 </html>
 

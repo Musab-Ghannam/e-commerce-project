@@ -1,86 +1,113 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="contact.aspx.cs" Inherits="PROJ5.contact" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <link rel="stylesheet" href="About.css" />
-<link rel="stylesheet" href="Navbar.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<title>Contact Us</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito:ital,wght@0,500;1,500&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
-    <script src="https://kit.fontawesome.com/e8295570d8.js" crossorigin="anonymous"></script>
-    <title></title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="AboutContact.css">
 </head>
 <body>
-      <nav>
-        <div id="NavLogo">
-       
-           <img src="pic\My_project-1-removebg-preview.png"/>
-        
-           <span>P L O T B O U N D</span>
-        </div>
-        <div id="NavText">
-            <button onclick="location.href='About.aspx'">About</button>
-            <button onclick="location.href='Contact.aspx'">Contact</button>
-            <button onclick="location.href='login.aspx'">Log In</button>
-            <button><i class="fa-solid fa-cart-shopping"></i></button>
-        </div>
-     </nav>
-     <div id="FormDiv">
-         <h1>Contact Us</h1>
-         <form runat="server" id="Form">
-            <div class="Roww">
-              <asp:Label ID="Label1" runat="server" Text="First Name:"></asp:Label>
-              <asp:TextBox class="DetailBoxes" runat="server" ID="Fname"></asp:TextBox>
-              <asp:Label ID="Label2" runat="server" Text="Last Name:"></asp:Label>
-              <asp:TextBox class="DetailBoxes" runat="server" ID="Lname"></asp:TextBox>
-            </div>
-            <div class="Roww">
-              <asp:Label ID="Label4" runat="server" Text="&nbsp Subject: &nbsp &nbsp"></asp:Label>
-              <asp:TextBox class="DetailBoxes" runat="server" id="Subject"></asp:TextBox>
-              <asp:Label ID="Label3" runat="server" Text="Phone Number:"></asp:Label>
-              <asp:TextBox class="DetailBoxes" runat="server" id="Number"></asp:TextBox>
-            </div>
-            <div id="Complaint">
-                <asp:Label ID="Label5" runat="server" Text="Details:"></asp:Label>
-                <asp:TextBox runat="server" ID="bigbox"></asp:TextBox>
-            </div>
-             <asp:Button ID="Submitbutton" runat="server" Text="Submit!"/>
-          </form>
-         
-     </div>
-    <div id="Footer">
-        <div id="FooterIcons">
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-linkedin"></i>
-            <i class="fa-brands fa-tiktok"></i>
-        </div>
-        <div id="FooterText">
-            <p>© 2022 PlotBound. All Rights Reserved</p>
-        </div>
+    
+  <div class="w3-bar w3-light-grey w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-hover-red w3-padding-16"><img src="Logo.png" width="60" id="Lg"></a>
+    <a href="http://localhost:56508/EXAMPLE.aspx" class="w3-bar-item w3-button w3-hover-red w3-padding-16">PLOTBOUND</a>
+    <input type="text" class="w3-bar-item w3-input w3-hide-small w3-padding-16 w3-hide-medium" placeholder="Search..">
+    <a href="#" class="w3-bar-item w3-button w3-red w3-hide-small w3-padding-16 w3-hide-medium">Go</a>
+    <a href="About.aspx" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-padding-16 w3-hide-medium">About</a>
+    <a href="ContactNEW.aspx" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-padding-16 w3-hide-medium">Contact</a>
+    <a href="http://localhost:56508/allcategories.aspx" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-padding-16 w3-hide-medium">Categories</a>
+    <a href="http://localhost:56508/login.aspx" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-padding-16 w3-hide-medium w3-right"><i class="w3-xlarge fa fa-user" id="login"></i> Log out</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-padding-16 w3-hide-medium w3-right"><i class="w3-xlarge fa fas fa-shopping-cart" id="login"></i> Cart</a>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-padding-16" onclick="myFunction()">&#9776;</a>
+  </div>
+  <div id="demo" class="w3-bar-block w3-light-grey w3-hide w3-hide-large ">
+    <a href="#" class="w3-bar-item w3-hover-red w3-button">About</a>
+    <a href="#" class="w3-bar-item w3-hover-red w3-button">Contact</a>
+    <a href="#" class="w3-bar-item w3-hover-red w3-button">Categories</a>
+    <a href="#" class="w3-bar-item w3-hover-red w3-button">Categories</a>
+    <a href="#" class="w3-bar-item w3-hover-red w3-button">Log In</a>
+    <a href="#" class="w3-bar-item w3-hover-red w3-button">Cart</a>
+  </div>
+</div>
+<div class="PP">
+ <div class="w3-container w3-card-4 w3-light-grey w3-text-pink" style="width: 100%; height: 200px;">
+  <p class="w3-center w3-xxlarge" >Connect with us!</p>
+  <p class="w3-center w3-large">For all inquires, Reach out to us using the form below!</p>
+ </div>
+</div>
+<div class="PP" style="display:flex;justify-content:center">
+
+<form class="w3-container w3-card-4 w3-light-grey w3-text-pink w3-margin" runat="server" style="width: 80%;">
+<h2 class="w3-center">Contact Us</h2>
+ 
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+    <div class="w3-rest">
+      <asp:TextBox class="w3-input w3-border" name="first" type="text" placeholder="Full Name" id="fullname" runat="server" required=""></asp:TextBox>
     </div>
-    <script type="text/javascript">
-        
-        function showFlag(countryCode) {
+</div>
 
-            var countryCode = document.getElementById("countryCode");
-            const flag = document.getElementById("Flag")
-            if (countryCode.length !== 2) {
-                console.log('Invalid country code');
-                return;
-            }
-            flag.src = `https://www.countryflags.io/${countryCode}/flat/64.png`;
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
+    <div class="w3-rest">
+      <asp:TextBox class="w3-input w3-border" name="last" type="text" placeholder="Subject" id="subject" runat="server" required=""></asp:TextBox>
+    </div>
+</div>
+
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-envelope-o"></i></div>
+    <div class="w3-rest">
+      <asp:TextBox class="w3-input w3-border" name="email" type="text" placeholder="Email" id="email" runat="server" required=""></asp:TextBox>
+    </div>
+</div>
+
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-phone"></i></div>
+    <div class="w3-rest">
+      <asp:TextBox class="w3-input w3-border" name="phone" type="number" placeholder="Phone" id="phone" runat="server" required=""></asp:TextBox>
+    </div>
+</div>
+
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
+    <div class="w3-rest">
+      <asp:TextBox class="w3-input w3-border" name="message" type="text" placeholder="Message" id="msg" required="" runat="server" style="height: 250px;"></asp:TextBox>
+    </div>
+</div>
+
+<p class="w3-center">
+<asp:button class="w3-button w3-section w3-red w3-ripple w3-padding-16 w3-hover-pink" style="width: 30%; border-radius: 10px;"  onclick="SendBtn_Click" runat="server"  id="SendBtn" Text="Send">  </asp:button>
+</p>
+</form>
+</div>
+
+<footer class="w3-container w3-padding-16 w3-light-grey w3-card-4 w3-center">
+  <div class="w3-xlarge w3-half">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <div class="w3-large w3-half">
+    © Plotbound JO, Inc. All Rights Reserved
+  </div>
+</footer>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("demo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
         }
-        function Number_TextChanged(sender, e) {
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                e.preventDefault();
-            }
-        }
-
-
-    </script>
+    }
+</script>
 </body>
 </html>

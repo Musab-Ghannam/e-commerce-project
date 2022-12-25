@@ -69,6 +69,16 @@
               <span class="menu-title">&nbsp; Users</span>
             </a>
           </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" ID="LinkButton1" onserverclick="Logout" runat="server">
+              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
+              <span class="menu-title">&nbsp; Logout</span>
+             </a>
+          </li>
+
+
         </ul>
       </nav>
       <div class="main-panel">

@@ -55,27 +55,44 @@ namespace PROJ5
                 comm.Parameters.AddWithValue("@search", search);
                 CONN.Open();
                 SqlDataReader read = comm.ExecuteReader();
-                while (read.Read())
+                if (read.Read())
                 {
+                    while (read.Read())
+                    {
 
-                    //     mydiv.InnerHtml += $"<section class='search - result - item'> "
-                    //+ $" < a class='image-link' href='#'><img class='image' src='{read[2]}'>'  </a>"
-                    //+ $" < div class='search-result-item-body'> <div class='row'> <div class='col-sm-9''>"
-                    //  + $"  <h4 class='search-result-item-heading'><a href ='http://localhost:56508/singlecategory.aspx?category_id={read[0]}&category_name={read[1]}' >{read[1]}</a></h4>"
-                    //  + $" <p class='description' > {read[6]}</p> </div> " +
-                    // " <div class=\"col-sm-3 text-align-center\">  " +
-                    //  $"< p class=\"value3 mt-sm\">${Convert.ToString(read[4])}</p> " +
-                    //  " < p class=\"fs-mini text-muted\">Only</p>" +
-                    //  $"<a class=\"btn btn-primary btn-info btn-sm\" href=\"http://localhost:56508/singlecategory.aspx?category_id={read[0]}&category_name={read[1]}\">Learn More</a> " +
-                    // "</div> </div> </div>  </section>\";";
+                        //     mydiv.InnerHtml += $"<section class='search - result - item'> "
+                        //+ $" < a class='image-link' href='#'><img class='image' src='{read[2]}'>'  </a>"
+                        //+ $" < div class='search-result-item-body'> <div class='row'> <div class='col-sm-9''>"
+                        //  + $"  <h4 class='search-result-item-heading'><a href ='http://localhost:56508/singlecategory.aspx?category_id={read[0]}&category_name={read[1]}' >{read[1]}</a></h4>"
+                        //  + $" <p class='description' > {read[6]}</p> </div> " +
+                        // " <div class=\"col-sm-3 text-align-center\">  " +
+                        //  $"< p class=\"value3 mt-sm\">${Convert.ToString(read[4])}</p> " +
+                        //  " < p class=\"fs-mini text-muted\">Only</p>" +
+                        //  $"<a class=\"btn btn-primary btn-info btn-sm\" href=\"http://localhost:56508/singlecategory.aspx?category_id={read[0]}&category_name={read[1]}\">Learn More</a> " +
+                        // "</div> </div> </div>  </section>\";";
 
 
 
 
-                    mydiv.InnerHtml += $"  <section class=\"search-result-item\">\r\n            <a class=\"image-link\" href=\"#\"><img class=\"image\" src='Images/{read[2]}'         </a>           <div class=\"search-result-item-body\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-sm-9\">\r\n                        <h4 class=\"search-result-item-heading\"><a href=\"http://localhost:56508/singlecategory.aspx?category_id={read[0]}&category_name={read[1]}\">{read[1]}</a></h4>\r\n                        <p class=\"info\">{read[8]}</p>\r\n                        <p class=\"description\">{read[6]}</p>\r\n                    </div>\r\n                    <div class=\"col-sm-3 text-align-center\">\r\n                        <p class=\"value3 mt-sm\">${Convert.ToString(read[4])}</p>\r\n                        <p class=\"fs-mini text-muted\">Only</p><a class=\"btn btn-primary btn-info btn-sm\" href=\"http://localhost:56508/singleProduct.aspx?product_id={read[0]}\">view product</a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </section>";
+                        mydiv.InnerHtml += $"  <section class=\"search-result-item\">\r\n      " +
+                            $"      <a class=\"image-link\" href=\"http://localhost:56508/singleProduct.aspx?product_id={read[0]}\"><img class=\"image\"  src='Images/{read[2]}'   " +
+                            $"      </a>           <div class=\"search-result-item-body\">\r\n       " +
+                            $"         <div class=\"row\">\r\n          " +
+                            $"          <div class=\"col-sm-9\">\r\n         " +
+                            $"               <h4 class=\"search-result-item-heading\"><a href=\"http://localhost:56508/singlecategory.aspx?category_id={read[0]}&category_name={read[1]}\">{read[1]}</a></h4>\r\n       " +
+                            $"                 <p class=\"info\">{read[8]}</p>\r\n             " +
+                            $"           <p class=\"description\">{read[6]}</p>\r\n            " +
+                            $"        </div>\r\n                    <div class=\"col-sm-3 text-align-center\">\r\n       " +
+                            $"                 <p class=\"value3 mt-sm\">Price: ${Convert.ToString(read[4])}</p>\r\n        " +
+                            $"                <p class=\"fs-mini text-muted\">author is : {read[9]}</p> <a class=\"btn btn-primary btn-info btn-sm\" href=\"http://localhost:56508/singleProduct.aspx?product_id={read[0]}\">view product</a>\r\n          " +
+                            $"          </div>\r\n                </div>\r\n            </div>\r\n        </section>";
 
+                    }
                 }
-
+                else
+                {
+                    mydiv.InnerHtml = "    <section class=\"search-result-item\"><div class=\"search-result-item-body\" id=\"labeldiv\"><p class=\"Label4\"  >No results</p></div></section>\r\n";
+                }
 
 
 
@@ -170,16 +187,44 @@ namespace PROJ5
 
             SqlDataReader read = comm.ExecuteReader();
 
-            while (read.Read())
+            if (read.Read())
             {
+                while (read.Read())
+                {
+
+                    //     mydiv.InnerHtml += $"<section class='search - result - item'> "
+                    //+ $" < a class='image-link' href='#'><img class='image' src='{read[2]}'>'  </a>"
+                    //+ $" < div class='search-result-item-body'> <div class='row'> <div class='col-sm-9''>"
+                    //  + $"  <h4 class='search-result-item-heading'><a href ='http://localhost:56508/singlecategory.aspx?category_id={read[0]}&category_name={read[1]}' >{read[1]}</a></h4>"
+                    //  + $" <p class='description' > {read[6]}</p> </div> " +
+                    // " <div class=\"col-sm-3 text-align-center\">  " +
+                    //  $"< p class=\"value3 mt-sm\">${Convert.ToString(read[4])}</p> " +
+                    //  " < p class=\"fs-mini text-muted\">Only</p>" +
+                    //  $"<a class=\"btn btn-primary btn-info btn-sm\" href=\"http://localhost:56508/singlecategory.aspx?category_id={read[0]}&category_name={read[1]}\">Learn More</a> " +
+                    // "</div> </div> </div>  </section>\";";
 
 
 
-                mydiv.InnerHtml += $"  <section class=\"search-result-item\">\r\n            <a class=\"image-link\" href=\"#\"><img class=\"image\" src='Images/{read[2]}'         </a>           <div class=\"search-result-item-body\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-sm-9\">\r\n                        <h4 class=\"search-result-item-heading\"><a href=\"http://localhost:56508/singlecategory.aspx?category_id={read[0]}&category_name={read[1]}\">{read[1]}</a></h4>\r\n                        <p class=\"info\">{read[8]}</p>\r\n                        <p class=\"description\">{read[6]}</p>\r\n                    </div>\r\n                    <div class=\"col-sm-3 text-align-center\">\r\n                        <p class=\"value3 mt-sm\">${Convert.ToString(read[4])}</p>\r\n                        <p class=\"fs-mini text-muted\">Only</p><a class=\"btn btn-primary btn-info btn-sm\" href=\"http://localhost:56508/singleProduct.aspx?product_id={read[0]}\">view product</a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </section>";
 
+                    mydiv.InnerHtml += $"  <section class=\"search-result-item\">\r\n      " +
+                        $"      <a class=\"image-link\" href=\"http://localhost:56508/singleProduct.aspx?product_id={read[0]}\"><img class=\"image\"  src='Images/{read[2]}'   " +
+                        $"      </a>           <div class=\"search-result-item-body\">\r\n       " +
+                        $"         <div class=\"row\">\r\n          " +
+                        $"          <div class=\"col-sm-9\">\r\n         " +
+                        $"               <h4 class=\"search-result-item-heading\"><a href=\"http://localhost:56508/singlecategory.aspx?category_id={read[0]}&category_name={read[1]}\">{read[1]}</a></h4>\r\n       " +
+                        $"                 <p class=\"info\">{read[8]}</p>\r\n             " +
+                        $"           <p class=\"description\">{read[6]}</p>\r\n            " +
+                        $"        </div>\r\n                    <div class=\"col-sm-3 text-align-center\">\r\n       " +
+                        $"                 <p class=\"value3 mt-sm\">Price: ${Convert.ToString(read[4])}</p>\r\n        " +
+                        $"                <p class=\"fs-mini text-muted\">author is : {read[9]}</p> <a class=\"btn btn-primary btn-info btn-sm\" href=\"http://localhost:56508/singleProduct.aspx?product_id={read[0]}\">view product</a>\r\n          " +
+                        $"          </div>\r\n                </div>\r\n            </div>\r\n        </section>";
+
+                }
             }
-
-
+            else
+            {
+                mydiv.InnerHtml = "  <section class=\"search-result-item\"><div class=\"search-result-item-body\" id=\"labeldiv\"><p  class=\"Label4\"  runat=\"server\"  >No results</p></div></section>\r\n";
+            }
 
 
 
@@ -233,6 +278,7 @@ namespace PROJ5
             }
 
         }
+
 
     }
 }

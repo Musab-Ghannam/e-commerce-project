@@ -23,21 +23,24 @@ namespace my_log_in
             string email = emaillogin.Value;
             string password = passwordlogin.Value;
             SqlConnection connection = new SqlConnection("data source= DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI");
-            SqlCommand command1 = new SqlCommand($"select Userid,role_id from Users WHERE EMAIL='{email}'and pass='{password}' ;", connection);
+            SqlCommand command1 = new SqlCommand($"select Userid,role_id from Users WHERE EMAIL=@email and pass=@password;", connection);
+            command1.Parameters.AddWithValue("@email", email);
+            command1.Parameters.AddWithValue("@password", password);
 
             connection.Open();
             SqlDataReader Read = command1.ExecuteReader();
             if (Read.Read())
             {
-                if (Read[1].ToString() == "1") 
+                if (Read[1].ToString() == "1")
                 {
                     Session["ID"] = Read[0].ToString();
                     Response.Redirect("http://localhost:56508/AdminCategory.aspx"); 
                 }
-                else {
-                Session["ID"] = Read[0].ToString();
+                else
+                {
+                    Session["ID"] = Read[0].ToString();
 
-                Response.Redirect("http://localhost:49765/homepage.aspx");
+                    Response.Redirect("http://localhost:56508/EXAMPLE.aspx");
                 }
 
             }

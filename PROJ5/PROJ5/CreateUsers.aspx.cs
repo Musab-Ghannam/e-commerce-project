@@ -65,5 +65,18 @@ namespace PROJ5
             Response.Redirect("Users.aspx");
 
         }
+
+
+
+        protected void Logout(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("login.aspx");
+        }
+
+
+
+
+
     }
 }

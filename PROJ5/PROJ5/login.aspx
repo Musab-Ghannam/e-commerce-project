@@ -11,9 +11,9 @@
 	<link rel="stylesheet"  href="main.css">
 	<style>
 		.wrap-login100{
-			width:450px;
-			height:500px;
-		}
+            width:450px;
+            height:450px;
+        }
 		.bayy{
 			 background-image: url("back.png");
 			 background-size: cover;

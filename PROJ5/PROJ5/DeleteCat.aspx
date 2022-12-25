@@ -59,7 +59,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/icons/themify.html">
+            <a class="nav-link" href="http://localhost:56508/Product.aspx">
               <i class="fa-solid fa-book" style="font-size: 20px;"></i>
               <span class="menu-title">&nbsp; Product</span>
             </a>
@@ -71,6 +71,19 @@
               <span class="menu-title">&nbsp; Users</span>
             </a>
           </li>
+
+
+
+
+<li class="nav-item">
+                <a class="nav-link" ID="LinkButton1" onserverclick="Logout" runat="server">
+              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
+              <span class="menu-title">&nbsp; Logout</span>
+             </a>
+          </li>
+
+
+
         </ul>
       </nav>
       <div class="main-panel">
@@ -79,16 +92,14 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h2>Users</h2>
+                  <h2>Delete category</h2>
                     <br />
                   
                   <div class="table-responsive">
     <form id="form1" runat="server">
         <asp:Label ID="CategoryName" runat="server" Text="Category name : "></asp:Label>
         <br />
-         <asp:Label ID="Label1" runat="server" Text="Image "></asp:Label>
-        <br />
-         <img  style="width:500px; height:500px" runat="server" src="#" id="image1">
+         <img  style="width:300px; height:300px" runat="server" src="#" id="image1">
         <br />
          <asp:Button ID="Button1" runat="server" class="btn btn-danger" Text="Delete" OnClick="Delete_button" />
     </form>

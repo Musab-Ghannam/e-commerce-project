@@ -130,6 +130,18 @@
               <span class="menu-title">&nbsp; Users</span>
             </a>
           </li>
+
+            <li class="nav-item">
+                <a class="nav-link" ID="LinkButton1" onserverclick="Logout" runat="server">
+              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
+              <span class="menu-title">&nbsp; Logout</span>
+             </a>
+          </li>
+
+
+
+
+
         </ul>
       </nav>
       <div class="main-panel">
@@ -151,7 +163,7 @@
 
                 </td>
                 <td>
-                              <asp:TextBox ID="email" runat="server" CssClass="tb form-control input-lg"></asp:TextBox>
+                              <asp:TextBox required="true" ID="email" runat="server" CssClass="tb form-control input-lg"></asp:TextBox>
 
                 </td>
             </tr>
@@ -160,7 +172,7 @@
                              <label> Password : </label>
                 </td>
                 <td>
-                    <input type="password" ID="pass" runat="server" Class="tb form-control input-lg"/>
+                    <input type="password" required id="pass" runat="server" class="tb form-control input-lg"/>
                            
 
                 </td>
@@ -170,7 +182,7 @@
                              <label> First Name : </label>
                 </td>
                 <td>
-                              <asp:TextBox ID="firstName" runat="server" CssClass="tb form-control input-lg"></asp:TextBox>
+                              <asp:TextBox ID="firstName" required="true" runat="server" CssClass="tb form-control input-lg"></asp:TextBox>
 
                 </td>
             </tr>
@@ -179,7 +191,7 @@
                      <label> Last Name : </label>
                 </td>
                 <td>
-                  <asp:TextBox ID="lastName" runat="server" CssClass="tb form-control input-lg"></asp:TextBox>
+                  <asp:TextBox ID="lastName" required="true"  runat="server" CssClass="tb form-control input-lg"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -187,7 +199,7 @@
                        <label> Phone : </label>
                 </td>
                 <td>
-                              <asp:TextBox ID="phone" runat="server" CssClass="tb form-control input-lg"></asp:TextBox>
+                              <asp:TextBox required="true" ID="phone" runat="server" CssClass="tb form-control input-lg"></asp:TextBox>
 
                 </td>
             </tr>
@@ -208,14 +220,14 @@
                 </td>
             </tr>
             <tr>
-                  <td> <asp:FileUpload ID="FileUpload1" runat="server" cssclass="fileupload"/></td>
+                  <td> <asp:FileUpload  accept=".png,.jpg,.jpeg,.gif" ID="FileUpload1" runat="server" cssclass="fileupload"/></td>
             </tr>
             <tr>
                <td><img id="image1"  runat="server" src="#"/></td> 
             </tr>
         </table>
         <div>
-            <asp:Button ID="btnUpload" Text="Save" runat="server" cssclass="btn btn-primary" OnClick="Edituser" />
+            <asp:Button  Text="Save" runat="server" cssclass="btn btn-primary" OnClick="Edituser" />
         </div>
                     
 

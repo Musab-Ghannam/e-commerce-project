@@ -70,6 +70,21 @@
               <span class="menu-title">&nbsp; Users</span>
             </a>
           </li>
+
+
+
+
+            <li class="nav-item">
+                <a class="nav-link" ID="LinkButton1" onserverclick="Logout" runat="server">
+              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
+              <span class="menu-title">&nbsp; Logout</span>
+             </a>
+          </li>
+
+
+
+
+
         </ul>
       </nav>
       <div class="main-panel">
@@ -83,7 +98,7 @@
                   
                   <div class="table-responsive">
     <form id="form1" runat="server">
-        <asp:Label ID="email" runat="server" Text="CEmail : "></asp:Label>
+        <asp:Label ID="email" runat="server" Text="Email : "></asp:Label>
         <br />
         <asp:Label ID="firstName" runat="server" Text="First name : "></asp:Label>
         <br />
@@ -95,7 +110,7 @@
         <br />
         <asp:Label ID="Role" runat="server" Text="role : "></asp:Label>
         <br />
-        <img runat="server"  style="width:500px; height:500px" src="#" id="image1"/>
+        <img runat="server"  style="width:300px; height:300px" src="#" id="image1"/>
         <br />
         <asp:Button ID="Button1" type="button" class="btn btn-danger" runat="server" Text="Delete" OnClick="Delete_button" />
 

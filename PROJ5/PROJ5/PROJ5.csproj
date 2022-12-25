@@ -109,6 +109,7 @@
     <Content Include="User Profile.aspx" />
     <Content Include="userprofile.css" />
     <Content Include="Users.aspx" />
+    <Content Include="uservieworders.aspx" />
     <Content Include="viewsale.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -295,6 +296,13 @@
     </Compile>
     <Compile Include="Users.aspx.designer.cs">
       <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uservieworders.aspx.cs">
+      <DependentUpon>uservieworders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uservieworders.aspx.designer.cs">
+      <DependentUpon>uservieworders.aspx</DependentUpon>
     </Compile>
     <Compile Include="viewsale.aspx.cs">
       <DependentUpon>viewsale.aspx</DependentUpon>

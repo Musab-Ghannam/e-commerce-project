@@ -12,79 +12,97 @@ namespace WebApplication3
 {
     public partial class deleteProdut : System.Web.UI.Page
     {
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            SqlConnection connection = new SqlConnection("data source=DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI");
+            connection.Open();
+            if (!string.IsNullOrEmpty(Session["ID"] as string))
             {
-                int id = Convert.ToInt32(Request.QueryString["id"]);
-                SqlConnection connection = new SqlConnection("data source= DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI");
-                connection.Open();
-                SqlCommand comand = new SqlCommand($"select*from product where product_id={id}", connection);
-                SqlDataReader read = comand.ExecuteReader();
 
-
-                while (read.Read())
+                if (!IsPostBack)
                 {
-                    tbproductname.Text = read[1].ToString();
+                    int id = Convert.ToInt32(Request.QueryString["id"]);
+                    SqlCommand comand = new SqlCommand($"select*from product where product_id={id}", connection);
+                    SqlDataReader read = comand.ExecuteReader();
+                    while (read.Read())
+                    {
+                        //tbproductname.Text = read[1].ToString();
+                        Image1.ImageUrl = $"Images/{read[2].ToString()}";
+                        lbproductname.Text += read[1].ToString();
+                        lbproductprice.Text += read[4].ToString() + "JD";
+                        Author.Text += read[9].ToString();
 
-                    Image1.ImageUrl = $"Images/{read[2].ToString()}";
-                    tbproductprice.Text = read[4].ToString();
-                    tbquantity.Text = read[5].ToString();
-                    tbsale.Text = read[7].ToString();
-                    tbdetails.Text = read[6].ToString();
-                    drcategoryname.SelectedValue = read[3].ToString();
-                    Session["Imagealt"] = read[2].ToString();
-                    tbauthor.Text = read[8].ToString();
 
+
+                    }
+                    connection.Close();
+                    connection.Open();
+                    string query = $"select * from category join product on category.category_id=product.category_id\r\nand product_id={id};";
+                    SqlCommand com = new SqlCommand(query, connection);
+                    SqlDataReader sdr = com.ExecuteReader();
+                    while (sdr.Read())
+                    {
+                        lbcategoryname.Text += sdr[1].ToString();
+
+                    }
                 }
-                connection.Close();
-                SqlConnection conn = new SqlConnection("data source= DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI");
-
-                SqlCommand command = new SqlCommand("select  category_id,category_name from category", conn);
-                conn.Open();
-                SqlDataAdapter adapt = new SqlDataAdapter(command);
-                DataTable dt = new DataTable();
-
-                adapt.Fill(dt);
-
-                drcategoryname.DataSource = dt;
-                drcategoryname.DataTextField = "category_name";
-                drcategoryname.DataValueField = "category_id";
-
-                drcategoryname.DataBind();
-                SqlDataReader rd = command.ExecuteReader();
             }
-
+            else
+            {
+                connection.Close();
+                Response.Redirect("login.aspx");
+                form1.Style["display"] = "none";
+            }
         }
-
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Request.QueryString["id"]);
-            SqlConnection connection = new SqlConnection("data source= DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI");
+            SqlConnection connection = new SqlConnection("data source=DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI");
             connection.Open();
-            string query = $"DELETE FROM product where product_id={id};";
-            SqlCommand command = new SqlCommand(query, connection); ;
-            command.ExecuteNonQuery();
-            connection.Close();
-            Response.Redirect("Product.aspx");
-        }
+            if (!string.IsNullOrEmpty(Session["ID"] as string))
+            {
+                int id = Convert.ToInt32(Request.QueryString["id"]);
+                string guerycondition = $"select order_id from order_product as O join product as P \r\non O.product_id=P.product_id and p.product_id={id};";
+                SqlCommand com = new SqlCommand(guerycondition, connection);
+                SqlDataReader sdr = com.ExecuteReader();
+                if (!sdr.Read())
+                {
 
-        protected void btnupload_Click(object sender, EventArgs e)
+                    connection.Close();
+                    connection.Open();
+                    string query = $"DELETE FROM product where product_id={id};";
+                    SqlCommand command = new SqlCommand(query, connection); ;
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    string dannger = "<div class=\"alert2\"> <span class=\"closebtn2\" onclick=\"this.parentElement.style.display='none';\"><a href=\"http://localhost:56508/Product.aspx\" class=\"xsign\">&times;</a></span>" +
+                        " <strong>Success!</strong>The book has been successfully deleted</div>";
+                    lbtest.Text = dannger;
+                }
+                else
+                {
+                    connection.Close();
+                    connection.Open();
+                    string dannger = "<div class=\"alert\"> <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\"><a href=\"http://localhost:56508/Product.aspx\" class=\"xsign\">&times;</a></span>" +
+                        " <strong>Danger!</strong>You cannot delete this product because it is included on orders</div>";
+                    lbtest.Text = dannger;
+
+
+                }
+            }
+            else
+            {
+                connection.Close();
+                Response.Redirect("login.aspx");
+                form1.Style["display"] = "none";
+            }
+        }
+        protected void Logout(object sender, EventArgs e)
         {
-           
-
+            Session.Abandon();
+            Response.Redirect("login.aspx");
         }
 
-        protected void Unnamed1_Click(object sender, EventArgs e)
-        {
-            int id = Convert.ToInt32(Request.QueryString["id"]);
-            SqlConnection connection = new SqlConnection("data source= DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI");
-            connection.Open();
-            string query = "";
-            SqlCommand command = new SqlCommand(query, connection); ;
-            command.ExecuteNonQuery();
-            connection.Close();
-            Response.Redirect("Product.aspx");
-        }
+
     }
 }

@@ -20,11 +20,14 @@ namespace PROJ5
             
             if (!string.IsNullOrEmpty(Session["ID"] as string))
             {
+                LinkButton1.Visible=true;
+                LOGIN.Visible=false;
+                pro.Visible= true;
 
-              
+
                 int IDs = Convert.ToInt32(Session["ID"].ToString());
                 SqlCommand command2 = new SqlCommand($"SELECT First_Name,Last_Name  FROM users where userid={IDs};", CONN);
-                string fname, lname;
+                string fname;
 
 
                 CONN.Open();
@@ -33,31 +36,32 @@ namespace PROJ5
                 while (reader1.Read())
                 {
                     fname = reader1[0].ToString();
-                    lname = reader1[1].ToString();
-                    Label8.Text = fname;
-                    Label9.Text = lname;
+                    //lname = reader1[1].ToString();
+                    //Label8.Text = fname;
+                    //Label9.Text = lname;
                 }
 
                 CONN.Close();
-                sign.CssClass = "hide2";
+                //sign.CssClass = "hide2";
 
-                log.CssClass = "hide2";
+                //log.CssClass = "hide2";
 
 
 
             }
             else
             {
-                Label7.CssClass = "hide2";
-                Label8.CssClass = "hide2";
-                Label9.CssClass = "hide2";
-                sign.CssClass = "noth";
-                log.CssClass = "noth";
-                prof.CssClass = "hide2";
-                Button2.CssClass = "hide2";
+                //Label7.CssClass = "hide2";
+                //Label8.CssClass = "hide2";
+                //Label9.CssClass = "hide2";
+                //sign.CssClass = "noth";
+                //log.CssClass = "noth";
+                //prof.CssClass = "hide2";
+                //Button2.CssClass = "hide2";
 
 
             }
+
 
 
 
@@ -82,7 +86,7 @@ namespace PROJ5
                     $"  <img class=\"card-img-top pict\"  src='Images/{reader[2]}' style='width:170px; height:250px'>               " +
                     $" <div class=\"card-body\">\r\n      <h4 class=\"card-title\">{reader[1]}</h4>\r\n     " +
                     $" <p class=\"card-text\">Some example text some example text. John Doe is an architect and engineer</p>\r\n    " +
-                    $"  <a href=\"http://localhost:56508/singlecategory.aspx?category_id={reader[0]}&category_name={reader[1]}\" class=\"btn btn-primary\">See product</a>\r\n    </div>\r\n  </div>\r \n <br> </div>";
+                    $"  <a href=\"http://localhost:56508/singlecategory.aspx?category_id={reader[0]}&category_name={reader[1]}\" class=\"btn btn-primary\">more books</a>\r\n    </div>\r\n  </div>\r \n <br> </div>";
 
             }
             CONN.Close();
@@ -101,9 +105,9 @@ namespace PROJ5
                     $"  <img class=\"card-img-top \"  src='Images/{read[2]}' style='width:200px'>               " +
                     $" <div class=\"card-body\">\r\n      <h4 class=\"card-title\">{read[1]}</h4>\r\n     " +
                      $" <p class=\"card-text PRICE\">Price:{read[4]}.00JD</p>\r\n    " +
-                        $" <p class=\"card-text PRICE1\">Price:20.00JD  </p>\r\n    " +
+                        $" <p class=\"card-text PRICE1\">Price:{read[8]}.00JD  </p>\r\n    " +
                     $" <p class=\"card-text\">{read[6]}</p>\r\n    " +
-                    $"  <a href=\"http://localhost:56508/singleProduct.aspx?product_id={read[0]}&product_name={read[1]}\" class=\"btn btn-primary\">See product</a>\r\n    </div>\r\n  </div>\r \n <br> </div>";
+                    $"  <a href=\"http://localhost:56508/singleProduct.aspx?product_id={read[0]}&product_name={read[1]}\" class=\"btn btn-primary\">See book</a>\r\n    </div>\r\n  </div>\r \n <br> </div>";
 
             }
 
@@ -152,7 +156,7 @@ namespace PROJ5
                     $" <div class=\"card-body\">\r\n      <h4 class=\"card-title\">{hot[1]}</h4>\r\n     " +
                      $" <p class=\"card-text PRICE1\" >Price:{hot[4]}.00JD</p>\r\n    " +
                     $" <p class=\"card-text\">Some example text some example text. John Doe is an architect and engineer</p>\r\n    " +
-                    $"  <a href=\"http://localhost:56508/singleProduct.aspx?product_id={hot[0]}&category_name={hot[1]}\" class=\"btn btn-primary\">See product</a>\r\n    </div>\r\n  </div>\r \n <br> </div>";
+                    $"  <a href=\"http://localhost:56508/singleProduct.aspx?product_id={hot[0]}&category_name={hot[1]}\" class=\"btn btn-primary\">See book</a>\r\n    </div>\r\n  </div>\r \n <br> </div>";
                 }
                 CONN.Close();
                 //Response.Redirect("page3.aspx?username=" + TextBox1.Text + "& password=" + TextBox2.Text);
@@ -234,5 +238,13 @@ namespace PROJ5
             Session["ID"] = "";
             Response.Redirect("http://localhost:56508/EXAMPLE.aspx");
         }
+
+        protected void Logout(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("EXAMPLE.aspx");
+        }
+
+
     }
 }

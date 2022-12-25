@@ -68,6 +68,17 @@
               <span class="menu-title">&nbsp; Users</span>
             </a>
           </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" ID="LinkButton1" onserverclick="Logout" runat="server">
+              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
+              <span class="menu-title">&nbsp; Logout</span>
+             </a>
+          </li>
+
+
+
         </ul>
       </nav>
       <div class="main-panel">
@@ -81,7 +92,6 @@
                   
                   <div class="table-responsive">
     <form id="form1" runat="server">
-        <h6><a href='CreateUsers.aspx'>Create New</a></h6>
         
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </form>

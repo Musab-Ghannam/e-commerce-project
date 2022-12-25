@@ -12,13 +12,36 @@ namespace PROJ5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("data source= DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI");
-           
-            string commm = $"Insert into contacus (fname,lname,sub,phone,detail) Values ('{Fname.Text}','{Lname.Text}','{Subject.Text}','{Number.Text}','{bigbox.Text}')";
-            SqlCommand com = new SqlCommand(commm, conn);
-            conn.Open();
-            com.ExecuteNonQuery();
-            conn.Close();
+
         }
+
+
+        protected void SendBtn_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection("data source= DESKTOP-PND235Q\\SQLEXPRESS01;database=LIBRARYBOOKS;Integrated security=SSPI"))
+            {
+                connection.Open();
+
+                string sql = "INSERT INTO contactus (name,subject,email,phone,message) VALUES (@value1, @value2, @value3, @value4, @value5)";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@value1", fullname.Text);
+                    command.Parameters.AddWithValue("@value2", subject.Text);
+                    command.Parameters.AddWithValue("@value3", email.Text);
+                    command.Parameters.AddWithValue("@value4", phone.Text);
+                    command.Parameters.AddWithValue("@value5", msg.Text);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+
+
+
+        }
+
+
+
+    
     }
 }

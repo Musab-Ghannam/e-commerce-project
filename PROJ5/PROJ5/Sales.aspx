@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
+
     <link rel="stylesheet" href="../CSS/Product.css"/>
     <title>Sales</title>
     <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
@@ -47,9 +48,7 @@
           height:125px !important;
       }
    </style>
-   
 </head>
-
 <body>
      <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
@@ -99,6 +98,14 @@
               <span class="menu-title">&nbsp; Users</span>
             </a>
           </li>
+
+       <li class="nav-item">
+                <a class="nav-link" ID="LinkButton1" onserverclick="Logout" runat="server">
+              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
+              <span class="menu-title">&nbsp; Logout</span>
+             </a>
+          </li>
+
         </ul>
       </nav>
       <div class="main-panel">
@@ -234,8 +241,9 @@
   <script src="../../js/off-canvas.js"></script>
   <script src="../../js/hoverable-collapse.js"></script>
   <script src="../../js/template.js"></script>
-  <script src="../../js/todolist.js"></script>
+   <script src="../../js/todolist.js"></script>
 
 </body>
+
 </html>
 

@@ -18,20 +18,50 @@ namespace PROJ5
                 SqlConnection connection =
             new SqlConnection("data source = DESKTOP-PND235Q\\SQLEXPRESS01; database = LIBRARYBOOKS ; integrated security=SSPI");
                 connection.Open();
-                string query = $"select * from category where category_id={id}";
-                SqlCommand comand = new SqlCommand(query, connection);
-                SqlDataReader read = comand.ExecuteReader();
-                while (read.Read())
+                bool flag = false;
 
+                if (!string.IsNullOrEmpty(Session["ID"] as string))
                 {
-                    Category_Name.Text = read[1].ToString();
+                    int IDs = Convert.ToInt32(Session["ID"].ToString());
 
-                    string image = $"Images/{read[2].ToString()}";
-                    image1.Src = image;
-                    Session["Image"] = read[2].ToString();
+
+                    SqlCommand check = new SqlCommand($"Select role_id from users where userid={IDs}", connection);
+
+                    SqlDataReader rolecheck = check.ExecuteReader();
+
+                    while (rolecheck.Read())
+                    {
+                        if (Convert.ToInt32(rolecheck[0]) == 1)
+                        {
+
+                            flag = true;
+                            break;
+
+                        }
+                    }
                 }
+                connection.Close();
+                connection.Open();
+                if (flag)
+                {
+                    string query = $"select * from category where category_id={id}";
+                    SqlCommand comand = new SqlCommand(query, connection);
+                    SqlDataReader read = comand.ExecuteReader();
+                    while (read.Read())
 
+                    {
+                        Category_Name.Text = read[1].ToString();
 
+                        string image = $"Images/{read[2].ToString()}";
+                        image1.Src = image;
+                        Session["Image"] = read[2].ToString();
+                    }
+
+                }
+                else
+                {
+                    Response.Redirect("login.aspx");
+                }
                 connection.Close();
 
             }
@@ -66,5 +96,18 @@ namespace PROJ5
             connection.Close();
             Response.Redirect("AdminCategory.aspx");
         }
+
+
+
+
+
+        protected void Logout(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("login.aspx");
+        }
+
+
+
     }
 }
