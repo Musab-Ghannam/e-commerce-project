@@ -1,0 +1,71 @@
+﻿
+#FormDiv {
+    margin: auto;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px 5px #d3d3d3;
+    margin-top: 30px;
+}
+
+    #FormDiv h1 {
+        margin-top: 10px;
+    }
+
+#Form {
+    display: flex;
+    height: 95%;
+    width: 95%;
+    justify-content: center;
+    gap: 35px;
+    flex-direction: column;
+}
+
+.Roww {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+    height: 6%;
+}
+
+.DetailBoxes {
+    height: 100%;
+    width: 20%;
+}
+
+#Flag {
+    transform: scale(0.2);
+}
+
+#Complaint {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    height: 60%;
+}
+
+#bigbox {
+    display: flex;
+    align-items: flex-start;
+    text-align: start;
+    width: 50%;
+}
+
+#Submitbutton {
+    height: 10%;
+    align-self: flex-end;
+    justify-self: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    width: 20%;
+}
+
+    #Submitbutton:hover {
+        background-color: aliceblue;
+    }

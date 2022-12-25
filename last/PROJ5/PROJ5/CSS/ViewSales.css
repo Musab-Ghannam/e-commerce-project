@@ -1,0 +1,36 @@
+﻿.table-responsive {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;
+}
+
+.table {
+ 
+    text-align: center;
+}
+
+.fas {
+    font-size: 24px;
+}
+
+.divbtn {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .divbtn .btn {
+        width: 15rem;
+        height: 5rem;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+.image {
+    border-radius: 50%;
+}
